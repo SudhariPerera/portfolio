@@ -1,0 +1,1027 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+html{
+    font-size: 10px;
+    font-family: 'Share Tech Mono', monospace;
+    scroll-behavior: smooth;
+}
+
+a{ 
+  text-decoration: none;
+  color: black;
+}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;  
+}
+
+p{
+  color: black;
+  font-size: 1.4rem;
+  margin-top: 5px;
+  line-height: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+}
+
+.section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 2rem;
+	text-align: center;
+}
+
+.section-title span {
+	color: crimson;
+}
+
+.mainSection{
+  display: inline-block;
+  padding: 10px 30px;
+  color: white;
+  background-color: transparent;
+  border: 3px solid crimson;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-top: 30px;
+  transition: 0.3s ease ;
+  transition-property: background-color, color;
+}
+
+.mainSection:hover{
+  color: white;
+  background-color: crimson;
+}
+
+.brand h1{
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+.brand h1 span{
+  color: crimson;
+}
+
+/* start header section */
+    #header{
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: auto;
+    }
+
+    #header .header{
+      min-height: 8vh;
+      background-color: rgba(31,30,30,0.24);
+      transition: .3s ease background-color;
+    }
+
+    #header .nav-bar{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      max-width: 1300px;
+      padding: 0 10px;
+    }
+
+    #header .nav-list ul{
+      list-style: none;
+      position: absolute;
+      background-color: rgb(31,30,30);
+      width: 100vw;
+      height: 100vh;
+      left: 100%;
+      top: 0%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      overflow-x: hidden;
+      transition: 0.5s ease left;
+    }
+
+    #header .nav-list ul.active{
+      left: 0%;
+    }
+
+    #header .nav-list ul a{
+      font-size: 2.5rem;
+      font-weight: 500;
+      letter-spacing: 0.2rem;
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      padding: 20px;
+      display: block;
+    }
+
+    #header .nav-list ul a::after{
+      content: attr(data-after);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      color: rgba(240,248,255,0.021);
+      font-size: 10rem;
+      letter-spacing: 50px;
+      z-index: -1;
+      transition: 0.3s ease letter-spacing;
+    }
+
+    #header .nav-list ul li:hover a::after{
+      transform: translate(-50%, -50%) scale(1);
+      letter-spacing: initial;
+    }
+
+    #header .nav-list ul li:hover a{
+      color: crimson;
+    }
+
+    #header .hamburger{
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      border: 3px solid white;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      cursor: pointer;
+      transition: scale(0.8);
+      margin-right: 30px;
+    }
+
+    #header .hamburger::after{
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      border: 3px solid white;
+      animation: hamburger_plus 1s ease infinite;
+    }
+
+    #header .hamburger .bar{
+      height: 1px;
+      width: 18px;
+      position: relative;
+      background-color: white;
+      z-index: -1;
+    }
+
+    #header .hamburger .bar::after,
+    #header .hamburger .bar::before{
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      background-color: white;
+      transition: .3s ease;
+      transition-property: top, bottom;
+    }
+
+    #header .hamburger .bar::after{
+      top: 8px;
+    }
+
+    #header .hamburger .bar::before{
+      bottom: 8px;
+    }
+
+    #header .hamburger.active .bar::before{
+      bottom: 0;
+    }
+    #header .hamburger.active .bar::after{
+      top: 0; 
+    }
+    /* end header section */
+
+    /* start main section */
+    #main{
+        background-image: url(./img/bg\ 1.jpg);
+        background-size: cover;
+        background-position: top center;
+        position: relative;
+        z-index: 1;
+    }
+
+
+    #main::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: 0.7;
+        z-index: -1;
+    }
+
+    #main .main{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 50px;
+        justify-content: flex-start ;        
+    }
+
+    #main h1{
+        display: block;
+        width: fit-content;
+        font-size: 5rem;
+        position: relative;  
+        color: transparent; 
+        animation: text_reveal 0.5s ease forwards ;
+        animation-delay: 1.5s ;
+    }
+
+    #main h1:nth-child(1){
+        animation-delay: 1s;
+    }
+
+    #main h1:nth-child(2){
+        animation: text_reveal_name 0.5s ease forwards;
+        animation-delay: 2s;
+    }
+
+    #main h1 span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        background-color: crimson;
+        animation: text_reveal_box 1s ease;
+        animation-delay: .3s;
+    }
+
+    #main h1:nth-child(1) span{
+        animation-delay: 1.5s;
+    }
+
+    #main h1:nth-child(2) span{
+        animation-delay: 2.5s;
+    }
+
+    /* end main section */
+
+
+    /*Start Skill Section */   
+    #skills .skills{
+        flex-direction: column;
+        text-align: center;
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 100px 0;
+    }
+
+    #skills .skills-bottom{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+    
+    #skills .skills-row {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin: 0;
+  }
+    
+    /* Create three equal columns that sits next to each other */
+    #skills .skills-column {
+        flex: 33.33%;
+        padding: 2px;
+        width: 90%;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        position: relative;
+        max-width: 800px;
+    }
+
+    #skills .skills-column img{
+      vertical-align: middle;
+    }
+
+    #skills .skills-column .skills-cont {
+      position: absolute;
+      bottom: 0;
+      background: rgb(0, 0, 0); /* Fallback color */
+      background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+      color: #f1f1f1;
+      width: 100%;
+      padding: 10px;
+    }
+      /* Add padding BETWEEN each column */
+    .skills-row,
+    .skills-row > .skills-column {
+        padding: 8px;
+    }
+      
+      /* Create four equal columns that floats next to each other */
+    #skills .skills-column {
+        float: left;
+        width: 10%;
+    }
+      
+    /* Clear floats after rows */ 
+    #skills .skills-row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /*End Skill Section */
+
+
+
+    /* Start Project Section */
+    #project .project{
+      flex-direction: column;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 0;
+    }
+
+    #project .project-row {
+        margin: 8px -16px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      #project .img{
+          border: rgb(255, 0, 0);
+          border-radius: 8px;
+      }
+      
+      /* Add padding BETWEEN each column */
+      .project-row,
+      .project-row > .project-column {
+        padding: 8px;
+      }
+      
+      /* Create four equal columns that floats next to each other */
+      #project .project-column {
+        float: left;
+        width: 25%;
+      }
+      
+      /* Clear floats after rows */ 
+      #project .project-row::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Content */
+      #project .project-section {
+        background-color: white;
+        padding: 10px;
+        /* font-family:'Times New Roman'; */
+      }
+
+      #project .project-img-container {
+        position: relative;
+        width: 100%;
+        border: 5px solid rgb(85, 85, 85);
+        border-radius: 8px;
+      }
+      
+      #project .project-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #008CBA;
+      }
+      
+      #project .project-img-container:hover .project-overlay {
+        opacity: 1;
+      }
+      
+      #project .project-text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+    /* End Project Section */
+
+
+
+
+    /* start tools Section */
+    #tools .tools{
+      flex-direction: column;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 90%;
+      padding: 100px 0;
+    }
+
+    #tools h1{
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      color: black;     
+      font-weight: 400;
+      margin-bottom: 10px;
+      letter-spacing: 1.8rem;
+      text-align: center;
+    }
+
+    #tools .tools-row {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+      
+      /* Create three equal columns that sits next to each other */
+    #tools .tools-column {
+        flex: 33.33%;
+        padding: 2px;
+        width: 90%;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        position: relative;
+        max-width: 800px;
+    }
+
+    #tools .tools-column img{
+      vertical-align: middle;
+    }
+
+    #tools .tools-column .tools-cont {
+      position: absolute;
+      bottom: 0;
+      background: rgb(0, 0, 0); /* Fallback color */
+      background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+      color: #f1f1f1;
+      width: 100%;
+      padding: 10px;
+    }
+      /* Add padding BETWEEN each column */
+    .tools-row,
+    .tools-row > .tools-column {
+        padding: 8px;
+    }
+      
+      /* Create four equal columns that floats next to each other */
+    #tools .tools-column {
+        float: left;
+        width: 10%;
+    }
+      
+    /* Clear floats after rows */ 
+    #tools .tools-row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* End tools Section */
+
+
+
+    /* Start Education Section */
+
+    #education .education{
+      flex-direction: column;
+      text-align: center;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 100px 0;
+    }
+
+    #education .education-top{
+      max-width:500px ;
+      margin: 0 auto;
+    }
+
+    #education .education-bottom{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+
+    #education .education-item{
+      flex-basis: 80%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      padding: 30px;
+      border-radius: 10px;
+      background-image: url(./img/42.png);
+      background-size: cover;
+      margin: 10px 5%;
+      position:relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    #education .education-item::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-image:linear-gradient(60deg, #b5c2d1 0%,#92b0cf 100%);
+      opacity: 0.9;
+      z-index: -1;
+    }
+
+    #education .education-bottom .icon{
+      height: 80px;
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    #education .education-item h2{
+      font-size: 2rem;
+      color:white ;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    #education .education-bottom p{
+      color: rgb(63, 5, 5);
+      text-align: left;
+    }
+
+    /* End Education Section */
+
+
+    /* Start about Section */
+
+    #about .about{
+      flex-direction: column-reverse;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 20px;
+    }
+
+    #about .about-left{
+      width: 250px;
+      height: 360px;
+    }
+
+    #about .about-right{
+      width: 100%;
+    }
+
+    #about .about-right h2{
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 0.2rem;
+      margin-bottom: 10px;
+      color: rgb(117, 6, 6);
+    }
+
+    #about .about-right p{
+      margin-bottom: 20px;
+    }
+
+    #about .about-right .mainSection{
+      color: black;
+      margin-bottom: 50px;
+      padding: 10px 20px;
+      font-size: 2rem;
+    }
+
+    #about .about-left .about-img{
+      height: 100%;
+      width: 100%;
+      position: relative;
+      border: 10px solid white;
+    }
+
+    #about .about-left .about-img::after{
+      content: '';
+      position:absolute;
+      left: -33px;
+      top: 19px;
+      height: 98%;
+      width: 98%;
+      border: 7px solid crimson;
+      z-index: -1;
+    }
+    /* End about Section */
+
+
+
+    /* Start contact Section */
+    #contact .contact{
+      flex-direction: column;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 90%;
+    }
+
+    #contact .contact-item{
+      width: 100%;
+      /* display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin: 0; */
+    }
+
+    #contact .contact-bar{
+      width: 80%;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      padding: 30px;
+      margin: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: 0px 0px 18px 0 #0000002c;
+      transition: 0.3s ease box-shadow;
+    }
+
+    #contact .contact-bar:hover{
+      box-shadow: 0px 0px 5px 0 #0000002c ;
+    }
+
+    #contact .icon {
+      width: 70px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+
+    #contact .contact-bar .icon img {
+      object-fit: contain;
+    }
+
+    #contact .contact-bar .contact-info {
+      width: 100%;
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    #contact .contact-info h1{
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    #contact .contact-info h2{
+      font-size:1.3rem ;
+      line-height: 2rem;
+      font-weight: 500;
+    }
+    /* End contact Section */
+
+    /* Start Footer Section */
+    #footer{
+      background-image:linear-gradient(60deg, #374250 0%, #5c6977 100%) ;
+    }
+
+    #footer .footer{
+      min-height: 200px;
+      flex-direction: column;
+      padding-top: 50px;
+      padding-bottom: 10px;
+    }
+
+    #footer h2{
+      color: white;
+      font-weight: 500;
+      font-size: 1.8rem;
+      letter-spacing: 0.1rem;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    #footer .social-icon{
+      display: flex;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+
+    #footer .social-item{
+      height: 30px;
+      width:30px;
+      margin: 0 8px;
+    }
+
+    #footer .social-item{
+      filter: grayscale(1);
+      transition: 3s ease filter;
+    }
+
+    #footer .social-item:hover img{
+      filter: grayscale(0);
+    }
+
+    #footer p{
+      color: white;
+      font-size: 1.3rem;
+    }
+    /* End Footer Section */
+
+
+    /* Start keyframes */
+    @keyframes hamburger_plus{
+      0%{
+        opacity: 1;
+        transform: scale(1);
+      }
+      100%{
+        opacity: 0;
+      transform: scale(1.4);
+      }
+    }
+
+    @keyframes text_reveal_box{
+        50%{
+            width: 100%;
+            left: 0;
+        }
+        100%{
+            width: 0;
+            left: 100%;
+        }
+    }
+    @keyframes text_reveal{
+        100%{
+            color: rgb(255, 255, 255);
+        }
+    }
+    @keyframes text_reveal_name {
+      100% {
+        color: crimson;
+        font-weight: 500;
+      }
+    }
+    /* End keyframes */
+
+
+
+    /* media query for tablet */
+    @media only screen and (min-width:768px){
+      .mainSection{
+        font-size: 2.5rem;
+        padding: 20px 60px;
+      }
+
+      h1.section-title{
+        font-size: 6rem;
+      }
+
+      /*main section*/
+      #main h1{
+        font-size: 7rem;
+      }
+      /*end main section*/
+
+      /*education section*/
+      #education .education-bottom .education-item{
+        flex-basis: 45%;
+        margin: 2.5%;
+      }
+      /*end education section*/
+
+      /*about section*/
+      #about .about{
+        flex-direction: row;
+      }
+
+      #about .about-left{
+        width: 600px;
+        height: 450px;
+        padding-left: 50px;
+      }
+
+      #about .about .about-left .about-img::after{
+        left: -45px;
+        top:34px;
+        height: 98%;
+        width: 98%;
+        border: 10px solid crimson;
+      }
+
+      #about .about-right{
+        text-align: left;
+        padding: 10px;
+      }
+
+      #about .about-right h1{
+        text-align: left;
+        font-size: 4rem;
+      }
+      /*end about section*/
+
+      /*contact section*/
+      #contact .contact{
+        flex-direction: column;
+        padding: 100px 0;
+        align-items: center;
+        justify-content: center;
+        min-width: 20vh;
+      }
+
+      #contact .contact-item{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 0;
+      }
+
+      #contact .contact-bar{
+        width: 30%;
+        margin: 0;
+        flex-direction: row;
+      }
+
+      #contact .contact-bar .icon{
+        height: 100px;
+        width: 100px;
+      }
+
+      #contact .contact-bar .icon img{
+        object-fit: contain;
+      }
+
+      #contact .contact-bar .contact-info{
+        width: 100%;
+        text-align: left;
+        padding-left: 20px;
+      }
+      /*end contact section*/
+    }
+    /* end media query for tablet */
+
+    /* media query for Desktop */
+    @media only screen and (min-width:1200px){
+      /*start header section*/
+      #header .hamburger{
+        display: none;
+      }
+      
+      #header .nav-list ul{
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+      }
+
+      #header .nav-list ul li{
+        display: inline-block;
+      }
+
+      #header .nav-list ul li a{
+        font-size: 2rem;
+      }
+
+      #header .nav-list ul a::after{
+        display: none;
+      }
+
+      /*end header section*/
+
+      #education .education-bottom .education-item{
+        flex-basis: 22%;
+        margin: 1.5%;
+      }
+
+      #tools h1{
+        font-size: 4rem;
+      }
+
+      #tools .tools-column {
+        width: 100%;
+        height: 100%;
+      }
+
+      #education h1{
+        font-size: 4rem;
+      }
+
+      #tools .tools-column .tools-cont{
+        font-size: 1.6rem;
+        width: 63%;
+      }
+
+      #tools .tools-column img{
+        padding: 50px;
+      }
+
+      #skills .skills-column {
+        width: 100%;
+        height: 100%;
+      }
+
+      #skills .skills-column .skills-cont{
+        font-size: 1.8rem;
+        width: 70%;
+      }
+
+      #skills .skills-column img{
+        padding: 50px;
+      }
+    } 
+
+    /* end media query for Desktop */
+    
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 900px) {
+      #tools .tools-column {
+        width: 15%;
+      }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      #tools .tools-column {
+        width: 25%;
+      }
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 900px) {
+      #project .project-column {
+        width: 50%;
+      }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      #project .project-column {
+        width: 100%;
+      }
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 900px) {
+      #skills .skills-column {
+        width: 15%;
+      }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      #skills .skills-column {
+        width: 25%;
+      }
+    }
